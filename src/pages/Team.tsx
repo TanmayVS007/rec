@@ -40,28 +40,17 @@ const Team = () => {
     linkedin: "https://linkedin.com/in/ketanpatil",
   };
 
-  // Senior Team Member - Featured with photo
-  const seniorMember = {
-    id: 2,
-    name: "Ar. Varun S. Bhamre",
-    role: "Advisor, AI/LLM Expert, Investor",
-    image: "advisor.jpg",
-    bio: "Built AI products to democratize data and information at scale. Has worked in cutting age technology for the last 15 years. He actively invests in various categories, with a focus in AI/LLM based products",
-    education: "B.Arch. & M. Arch. (Architectural Conservation) SPA Delhi",
-    specialization:
-      "Architectural Conservation, Heritage Restoration, Sustainable Design, Project Management",
-    achievements:
-      "Heritage Conservation Specialist, SPA Delhi Alumni, Conservation Project Leader",
-    experience: "12+ years",
-    projects: "85+ conservation and architectural projects",
-    location: "Mumbai",
-    email: "varun.bhamre@rectanglearchitects.com",
-    phone: "+91 9876543210",
-    linkedin: "https://linkedin.com/in/varunbhamre",
-  };
-
   // Other team members (name and info only)
   const teamMembers = [
+    {
+      name: "Ar. Varun S. Bhamre",
+      role: "Urban Planning Specialist",
+      department: "Urban & Regional Planning",
+      experience: "10+ years",
+      specialization: "Urban & Regional Planning, Master Planning",
+      education: "B.Arch. & M. Arch. Architectural Conservation SPA Delhi",
+      email: "harshada.mahajan@rectanglearchitects.com",
+    },
     {
       name: "Ar. Harshada Mahajan",
       role: "Urban Planning Specialist",
@@ -228,139 +217,62 @@ const Team = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-            {/* Principal Architect */}
-            <div
-              className={`group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transform transition-all duration-1000 hover:scale-105 hover:-translate-y-4 cursor-pointer card-hover ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-12 opacity-0"
-              }`}
-              onClick={() => setSelectedMember(principalArchitect)}
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={principalArchitect.image}
-                  alt={principalArchitect.name}
-                  className="w-full h-64 sm:h-80 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-
-                {/* Principal badge */}
-                <div className="absolute top-6 right-6">
-                  <span className="bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center">
+              {/* Left - Info Section */}
+              <div className="p-8 lg:p-12">
+                <div className="inline-block mb-5">
+                  <span className="bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-bold shadow-md">
                     Principal Architect
                   </span>
                 </div>
 
-                {/* Social links overlay */}
-                <div className="absolute bottom-6 left-6 right-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                  <div className="flex space-x-4">
-                    <button className="p-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-110">
-                      <Mail className="h-5 w-5" />
-                    </button>
-                    <button className="p-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-110">
-                      <Linkedin className="h-5 w-5" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-
-              <div className="p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors duration-300">
+                <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
                   {principalArchitect.name}
-                </h3>
-                <p className="text-yellow-600 font-semibold mb-4 text-base sm:text-lg">
+                </h2>
+                <p className="text-lg font-semibold text-yellow-600 mb-6">
                   {principalArchitect.role}
                 </p>
-                <p className="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base">
+                <p className="text-gray-600 leading-relaxed mb-8">
                   {principalArchitect.bio}
                 </p>
 
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center text-gray-500">
-                    <Calendar className="h-4 w-4 mr-3 flex-shrink-0" />
+                <div className="space-y-4 text-gray-700 mb-8">
+                  <div className="flex items-center">
+                    <Calendar className="h-5 w-5 mr-3 text-yellow-500" />
                     <span>{principalArchitect.experience}</span>
                   </div>
-                  <div className="flex items-center text-gray-500">
-                    <Building2 className="h-4 w-4 mr-3 flex-shrink-0" />
+                  <div className="flex items-center">
+                    <Building2 className="h-5 w-5 mr-3 text-yellow-500" />
                     <span>{principalArchitect.projects}</span>
                   </div>
-                  <div className="flex items-center text-gray-500">
-                    <MapPin className="h-4 w-4 mr-3 flex-shrink-0" />
+                  <div className="flex items-center">
+                    <MapPin className="h-5 w-5 mr-3 text-yellow-500" />
                     <span>{principalArchitect.location}</span>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Senior Member */}
-            <div
-              className={`group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transform transition-all duration-1000 delay-200 hover:scale-105 hover:-translate-y-4 cursor-pointer card-hover ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-12 opacity-0"
-              }`}
-              onClick={() => setSelectedMember(seniorMember)}
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={seniorMember.image}
-                  alt={seniorMember.name}
-                  className="w-full h-64 sm:h-80 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-
-                {/* Senior badge */}
-                <div className="absolute top-6 right-6">
-                  <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                    Advisor
-                  </span>
+                {/* Social Buttons */}
+                <div className="flex space-x-4">
+                  <button className="p-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-110 shadow-md">
+                    <Mail className="h-5 w-5" />
+                  </button>
+                  <button className="p-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-110 shadow-md">
+                    <Linkedin className="h-5 w-5" />
+                  </button>
                 </div>
-
-                {/* Social links overlay */}
-                <div className="absolute bottom-6 left-6 right-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                  <div className="flex space-x-4">
-                    <button className="p-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-110">
-                      <Mail className="h-5 w-5" />
-                    </button>
-                    <button className="p-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-110">
-                      <Linkedin className="h-5 w-5" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
-              <div className="p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                  {seniorMember.name}
-                </h3>
-                <p className="text-blue-600 font-semibold mb-4 text-base sm:text-lg">
-                  {seniorMember.role}
-                </p>
-                <p className="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base">
-                  {seniorMember.bio}
-                </p>
-
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center text-gray-500">
-                    <Calendar className="h-4 w-4 mr-3 flex-shrink-0" />
-                    <span>{seniorMember.experience}</span>
-                  </div>
-                  <div className="flex items-center text-gray-500">
-                    <Building2 className="h-4 w-4 mr-3 flex-shrink-0" />
-                    <span>{seniorMember.projects}</span>
-                  </div>
-                  <div className="flex items-center text-gray-500">
-                    <MapPin className="h-4 w-4 mr-3 flex-shrink-0" />
-                    <span>{seniorMember.location}</span>
-                  </div>
+              {/* Right - Image Section */}
+              <div className="relative flex justify-center items-center bg-gradient-to-bl from-yellow-50 to-white p-10">
+                <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-700">
+                  <img
+                    src={principalArchitect.image}
+                    alt={principalArchitect.name}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Circular gradient overlay for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                 </div>
               </div>
             </div>
@@ -494,10 +406,10 @@ const Team = () => {
         </div>
       </section>
       {/* Join Our Team CTA */}
-      
+
       {/* <section className="py-16 sm:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden"> */}
-        {/* Animated background elements */}
-        {/* <div className="absolute inset-0">
+      {/* Animated background elements */}
+      {/* <div className="absolute inset-0">
           <div className="absolute top-1/4 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-yellow-500/5 rounded-full blur-3xl animate-pulse" />
           <div
             className="absolute bottom-1/4 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"
@@ -505,7 +417,7 @@ const Team = () => {
           />
         </div> */}
 
-        {/* <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+      {/* <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <div
             className={`transform transition-all duration-1500 ${
               isVisible
@@ -532,7 +444,7 @@ const Team = () => {
           </div>
         </div> */}
       {/* </section> */}
-      
+
       {/* Featured Member Modal */}
       {selectedMember && (
         <div
@@ -642,14 +554,14 @@ const Team = () => {
                     )}
                   </div>
 
-                  <div className="mt-6 sm:mt-8 flex space-x-4">
+                  {/* <div className="mt-6 sm:mt-8 flex space-x-4">
                     <button className="flex-1 bg-yellow-500 text-black py-2 sm:py-3 rounded-xl font-semibold hover:bg-yellow-400 transition-colors duration-300 text-sm sm:text-base">
                       Contact
                     </button>
                     <button className="p-2 sm:p-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors duration-300">
                       <Linkedin className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -661,3 +573,71 @@ const Team = () => {
 };
 
 export default Team;
+
+// senior member
+// {/* <div
+//               className={`group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transform transition-all duration-1000 delay-200 hover:scale-105 hover:-translate-y-4 cursor-pointer card-hover ${
+//                 isVisible
+//                   ? "translate-y-0 opacity-100"
+//                   : "translate-y-12 opacity-0"
+//               }`}
+//               onClick={() => setSelectedMember(seniorMember)}
+//             >
+//               <div className="relative overflow-hidden">
+//                 <img
+//                   src={seniorMember.image}
+//                   alt={seniorMember.name}
+//                   className="w-full h-64 sm:h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+//                 />
+//                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+
+//                 {/* Senior badge */}
+//                 <div className="absolute top-6 right-6">
+//                   <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+//                     Advisor
+//                   </span>
+//                 </div>
+
+//                 {/* Social links overlay */}
+//                 <div className="absolute bottom-6 left-6 right-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+//                   <div className="flex space-x-4">
+//                     <button className="p-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-110">
+//                       <Mail className="h-5 w-5" />
+//                     </button>
+//                     <button className="p-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-110">
+//                       <Linkedin className="h-5 w-5" />
+//                     </button>
+//                   </div>
+//                 </div>
+
+//                 {/* Hover overlay */}
+//                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+//               </div>
+
+//               <div className="p-6 sm:p-8">
+//                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+//                   {seniorMember.name}
+//                 </h3>
+//                 <p className="text-blue-600 font-semibold mb-4 text-base sm:text-lg">
+//                   {seniorMember.role}
+//                 </p>
+//                 <p className="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base">
+//                   {seniorMember.bio}
+//                 </p>
+
+//                 <div className="space-y-3 text-sm">
+//                   <div className="flex items-center text-gray-500">
+//                     <Calendar className="h-4 w-4 mr-3 flex-shrink-0" />
+//                     <span>{seniorMember.experience}</span>
+//                   </div>
+//                   <div className="flex items-center text-gray-500">
+//                     <Building2 className="h-4 w-4 mr-3 flex-shrink-0" />
+//                     <span>{seniorMember.projects}</span>
+//                   </div>
+//                   <div className="flex items-center text-gray-500">
+//                     <MapPin className="h-4 w-4 mr-3 flex-shrink-0" />
+//                     <span>{seniorMember.location}</span>
+//                   </div>
+//                 </div>
+//               </div> */}
+// </div>

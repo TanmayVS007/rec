@@ -96,76 +96,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className={`transform transition-all duration-1000 ${
-              isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
-            }`}>
-              <div className="mb-8">
-                <span className="text-yellow-500 font-semibold text-lg tracking-wide uppercase">Our Journey</span>
-                <h2 className="text-5xl font-bold text-gray-900 mt-4 mb-8 leading-tight">
-                  Building Dreams Into
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
-                    Reality
-                  </span>
-                </h2>
-              </div>
-              
-              <div className="space-y-6">
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Founded in 2010 by visionary architects Ketan Patil, Rectangle Architects 
-                  began with a simple yet ambitious goal: to create buildings that not only serve their purpose 
-                  but inspire those who experience them.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  What started as a small studio has grown into a renowned firm known for pushing the boundaries 
-                  of contemporary architecture while maintaining a deep respect for environmental sustainability 
-                  and community impact.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Today, we continue to innovate, designing spaces that reflect our clients' visions while 
-                  contributing positively to the urban fabric and natural environment.
-                </p>
-              </div>
-              
-              <div className="mt-10 grid grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-600">15+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-600">438+</div>
-                  <div className="text-sm text-gray-600">Projects Completed</div>
-                </div>
-                {/* <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-600">25+</div>
-                  <div className="text-sm text-gray-600">Awards Won</div>
-                </div> */}
-              </div>
-            </div>
-            
-            <div className={`relative transform transition-all duration-1000 delay-500 ${
-              isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'
-            }`}>
-              <div className="relative group">
-                <img
-                  src="https://amazingarchitecture.com/storage/files/1/Architecture%20firms/Milad%20Eshtiyaghi/Wave%20Residential%20Complex/01-Wave-Residential-Complex-Milad-Eshtiyaghi-Studio-Mumbai-India.jpg"
-                  alt="Architectural team at work"
-                  className="rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105"
-                />
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Floating elements */}
-                <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-3xl transform rotate-12 group-hover:rotate-45 transition-transform duration-500 opacity-90 animate-float" />
-                <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl transform -rotate-12 group-hover:-rotate-45 transition-transform duration-500 opacity-90 animate-float" style={{ animationDelay: '2s' }} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Values Section */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
         {/* Background pattern */}
@@ -209,55 +139,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <span className="text-yellow-500 font-semibold text-lg tracking-wide uppercase">Our Journey</span>
-            <h2 className="text-5xl font-bold text-gray-900 mt-4 mb-6">Milestones That Shaped Us</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Key moments in our evolution from a small studio to an award-winning architectural firm
-            </p>
-          </div>
-          
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-px h-full w-1 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></div>
-            
-            {timeline.map((item, index) => (
-              <div
-                key={index}
-                className={`relative flex items-center mb-16 ${
-                  index % 2 === 0 ? 'justify-start' : 'justify-end'
-                }`}
-              >
-                <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'} transform transition-all duration-1000 delay-${index * 200} ${
-                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
-                }`}>
-                  <div className={`group p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${
-                    item.highlight ? 'bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-200' : 'bg-white'
-                  }`}>
-                    <span className={`font-bold text-2xl ${item.highlight ? 'text-yellow-600' : 'text-yellow-500'}`}>
-                      {item.year}
-                    </span>
-                    <p className="text-gray-700 mt-3 text-lg leading-relaxed">{item.event}</p>
-                    {item.highlight && (
-                      <div className="mt-4">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-500 text-black">
-                          Milestone
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-                
-                <div className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white shadow-lg ${
-                  item.highlight ? 'bg-yellow-500 animate-pulse' : 'bg-gray-400'
-                }`}></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Mission Statement */}
       <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
@@ -289,3 +171,124 @@ const About = () => {
 };
 
 export default About;
+
+
+// {/* Story Section */}
+//       <section className="py-24 relative overflow-hidden">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+//             <div className={`transform transition-all duration-1000 ${
+//               isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
+//             }`}>
+//               {/* <div className="mb-8">
+//                 <span className="text-yellow-500 font-semibold text-lg tracking-wide uppercase">Our Journey</span>
+//                 <h2 className="text-5xl font-bold text-gray-900 mt-4 mb-8 leading-tight">
+//                   Building Dreams Into
+//                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
+//                     Reality
+//                   </span>
+//                 </h2>
+//               </div> */}
+              
+//               {/* <div className="space-y-6">
+//                 <p className="text-xl text-gray-600 leading-relaxed">
+//                   Founded in 2010 by visionary architects Ketan Patil, Rectangle Architects 
+//                   began with a simple yet ambitious goal: to create buildings that not only serve their purpose 
+//                   but inspire those who experience them.
+//                 </p>
+//                 <p className="text-lg text-gray-600 leading-relaxed">
+//                   What started as a small studio has grown into a renowned firm known for pushing the boundaries 
+//                   of contemporary architecture while maintaining a deep respect for environmental sustainability 
+//                   and community impact.
+//                 </p>
+//                 <p className="text-lg text-gray-600 leading-relaxed">
+//                   Today, we continue to innovate, designing spaces that reflect our clients' visions while 
+//                   contributing positively to the urban fabric and natural environment.
+//                 </p>
+//               </div> */}
+              
+//               {/* <div className="mt-10 grid grid-cols-3 gap-6">
+//                 <div className="text-center">
+//                   <div className="text-3xl font-bold text-yellow-600">15+</div>
+//                   <div className="text-sm text-gray-600">Years Experience</div>
+//                 </div>
+//                 <div className="text-center">
+//                   <div className="text-3xl font-bold text-yellow-600">438+</div>
+//                   <div className="text-sm text-gray-600">Projects Completed</div>
+//                 </div>
+//                 <div className="text-center">
+//                   <div className="text-3xl font-bold text-yellow-600">25+</div>
+//                   <div className="text-sm text-gray-600">Awards Won</div>
+//                 </div>
+//               </div> */}
+//             </div>
+            
+//             <div className={`relative transform transition-all duration-1000 delay-500 ${
+//               isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'
+//             }`}>
+//               <div className="relative group">
+//                 <img
+//                   src="https://amazingarchitecture.com/storage/files/1/Architecture%20firms/Milad%20Eshtiyaghi/Wave%20Residential%20Complex/01-Wave-Residential-Complex-Milad-Eshtiyaghi-Studio-Mumbai-India.jpg"
+//                   alt="Architectural team at work"
+//                   className="rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105"
+//                 />
+//                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+//                 {/* Floating elements */}
+//                 <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-3xl transform rotate-12 group-hover:rotate-45 transition-transform duration-500 opacity-90 animate-float" />
+//                 <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl transform -rotate-12 group-hover:-rotate-45 transition-transform duration-500 opacity-90 animate-float" style={{ animationDelay: '2s' }} />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+// {/* Timeline Section */}
+//       <section className="py-24 relative overflow-hidden">
+//         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="text-center mb-20">
+//             <span className="text-yellow-500 font-semibold text-lg tracking-wide uppercase">Our Journey</span>
+//             <h2 className="text-5xl font-bold text-gray-900 mt-4 mb-6">Milestones That Shaped Us</h2>
+//             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+//               Key moments in our evolution from a small studio to an award-winning architectural firm
+//             </p>
+//           </div>
+          
+//           <div className="relative">
+//             <div className="absolute left-1/2 transform -translate-x-px h-full w-1 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></div>
+            
+//             {timeline.map((item, index) => (
+//               <div
+//                 key={index}
+//                 className={`relative flex items-center mb-16 ${
+//                   index % 2 === 0 ? 'justify-start' : 'justify-end'
+//                 }`}
+//               >
+//                 <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'} transform transition-all duration-1000 delay-${index * 200} ${
+//                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+//                 }`}>
+//                   <div className={`group p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${
+//                     item.highlight ? 'bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-200' : 'bg-white'
+//                   }`}>
+//                     <span className={`font-bold text-2xl ${item.highlight ? 'text-yellow-600' : 'text-yellow-500'}`}>
+//                       {item.year}
+//                     </span>
+//                     <p className="text-gray-700 mt-3 text-lg leading-relaxed">{item.event}</p>
+//                     {item.highlight && (
+//                       <div className="mt-4">
+//                         <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-500 text-black">
+//                           Milestone
+//                         </span>
+//                       </div>
+//                     )}
+//                   </div>
+//                 </div>
+                
+//                 <div className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white shadow-lg ${
+//                   item.highlight ? 'bg-yellow-500 animate-pulse' : 'bg-gray-400'
+//                 }`}></div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>

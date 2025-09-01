@@ -72,7 +72,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: ['rectanglearchitect@gmail.com', 'info@rectanglearchitects.com'],
+      details: ['rectanglearchitect@gmail.com'],
       color: 'from-purple-500 to-pink-500'
     },
     {

@@ -408,18 +408,107 @@ const Team = () => {
         </div>
       </section>
       {/* Team Members Grid - Name and Info Only */}
+      {/* Senior Members Section */}
       <section className="py-16 sm:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-20">
             <span className="text-yellow-500 font-semibold text-sm sm:text-lg tracking-wide uppercase">
-              Our Team
+              Senior Team
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              Expert Professionals
+              Senior Members
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Dedicated specialists across all disciplines working together to
-              deliver exceptional architectural solutions.
+              Our experienced senior professionals who bring specialized expertise and leadership to every project.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+            {seniorMember.map((member, index) => (
+              <div
+                key={index}
+                className={`bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transform transition-all duration-1000 delay-${
+                  index * 200
+                } hover:scale-105 hover:-translate-y-2 card-hover ${
+                  isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-12 opacity-0"
+                }`}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+                  {/* Left - Image Section */}
+                  <div className="relative flex justify-center items-center bg-gradient-to-bl from-yellow-50 to-white p-8">
+                    <div className="relative w-48 h-48 rounded-full shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-700">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                  </div>
+
+                  {/* Right - Info Section */}
+                  <div className="p-6 sm:p-8">
+                    <div className="inline-block mb-4">
+                      <span className="bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold shadow-md">
+                        Senior Member
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {member.name}
+                    </h3>
+                    <p className="text-lg font-semibold text-yellow-600 mb-4">
+                      {member.role}
+                    </p>
+                    <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+                      {member.bio}
+                    </p>
+
+                    <div className="space-y-3 text-sm text-gray-700 mb-6">
+                      <div className="flex items-center">
+                        <Calendar className="h-4 w-4 mr-3 text-yellow-500 flex-shrink-0" />
+                        <span>{member.experience}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Building2 className="h-4 w-4 mr-3 text-yellow-500 flex-shrink-0" />
+                        <span>{member.projects}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <MapPin className="h-4 w-4 mr-3 text-yellow-500 flex-shrink-0" />
+                        <span>{member.location}</span>
+                      </div>
+                    </div>
+
+                    <div className="flex space-x-3">
+                      <button className="p-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-110 shadow-md">
+                        <Mail className="h-4 w-4" />
+                      </button>
+                      <button className="p-3 bg-yellow-500 text-black rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-110 shadow-md">
+                        <Linkedin className="h-4 w-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Other Team Members Grid */}
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-20">
+            <span className="text-yellow-500 font-semibold text-sm sm:text-lg tracking-wide uppercase">
+              Supporting Team
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
+              Other Professionals
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+              Additional specialists and consultants who contribute their expertise to our diverse range of projects.
             </p>
           </div>
 

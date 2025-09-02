@@ -409,20 +409,8 @@ const Team = () => {
       </section>
       {/* Team Members Grid - Name and Info Only */}
       {/* Senior Members Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-20">
-            <span className="text-yellow-500 font-semibold text-sm sm:text-lg tracking-wide uppercase">
-              Senior Team
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              Senior Members
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Our experienced senior professionals who bring specialized expertise and leadership to every project.
-            </p>
-          </div>
-
+      <section className="py-8 sm:py-12 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             {seniorMember.map((member, index) => (
               <div
@@ -437,8 +425,8 @@ const Team = () => {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
                   {/* Left - Image Section */}
-                  <div className="relative flex justify-center items-center bg-gradient-to-bl from-yellow-50 to-white p-8">
-                    <div className="relative w-48 h-48 rounded-full shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-700">
+                  <div className="relative flex justify-center items-center bg-gradient-to-bl from-yellow-50 to-white p-6">
+                    <div className="relative w-40 h-40 rounded-full shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-700">
                       <img
                         src={member.image}
                         alt={member.name}
@@ -450,13 +438,7 @@ const Team = () => {
 
                   {/* Right - Info Section */}
                   <div className="p-6 sm:p-8">
-                    <div className="inline-block mb-4">
-                      <span className="bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold shadow-md">
-                        Senior Member
-                      </span>
-                    </div>
-
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 mt-4">
                       {member.name}
                     </h3>
                     <p className="text-lg font-semibold text-yellow-600 mb-4">

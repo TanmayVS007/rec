@@ -13,7 +13,25 @@ import {
 
 const Team = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [selectedMember, setSelectedMember] = useState(null);
+  type Member = {
+    id?: number;
+    name: string;
+    role: string;
+    image?: string;
+    bio?: string;
+    education?: string;
+    specialization?: string;
+    achievements?: string;
+    experience?: string;
+    projects?: string;
+    location?: string;
+    email?: string;
+    phone?: string;
+    linkedin?: string;
+    department?: string;
+  };
+
+  const [selectedMember, setSelectedMember] = useState<Member | null>(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -40,25 +58,136 @@ const Team = () => {
     linkedin: "https://linkedin.com/in/ketanpatil",
   };
 
-  // Other team members (name and info only)
-  const teamMembers = [
+  const seniorMember = [
     {
-      name: "Ar. Varun S. Bhamre",
-      role: "Urban Planning Specialist",
-      department: "Urban & Regional Planning",
-      experience: "10+ years",
-      specialization: "Urban & Regional Planning, Master Planning",
-      education: "B.Arch. & M. Arch. Architectural Conservation SPA Delhi",
-      email: "harshada.mahajan@rectanglearchitects.com",
+      name: "Ar. Bhagyashree Patil",
+      role: "Planning Consultant",
+      image: "dada.jpg",
+      bio: "Dolore exercitation tempor elit quis qui. Laborum non nulla ea incididunt esse ea elit do cillum quis aute ex magna. Veniam ipsum eiusmod ut ipsum magna sunt. Exercitation incididunt incididunt aliquip aliquip veniam fugiat minim commodo. Consequat quis aliqua fugiat amet elit cillum.",
+      education:
+        "B.Arch. (Sir J.J. CoA Mumbai), M. Plan. (Urban & Regional Planning) S.P.A. Bhopal",
+      specialization: "Urban & Regional Planning, Development Control",
+      achievements:
+        "Heritage Conservation Specialist, SPA Delhi Alumni, Conservation Project Leader",
+      experience: "11+ years",
+      projects: "85+ conservation and architectural projects",
+      location: "Mumbai",
+      email: "varun.bhamre@rectanglearchitects.com",
+      phone: "+91 9876543210",
+      linkedin: "https://linkedin.com/in/varunbhamre",
     },
     {
-      name: "Ar. Harshada Mahajan",
+      name: "Ar. Varun S. Bhamre",
+      role: "Conservation Specialist",
+      image: "dada.jpg",
+      bio: "Cupidatat proident occaecat eu pariatur aliqua enim. Aliquip culpa aliqua consectetur amet velit ea eiusmod veniam excepteur. Labore ea et sint sit mollit id enim ut ut deserunt. Mollit magna enim qui Lorem officia adipisicing minim tempor nisi sit culpa do. Eiusmod amet nisi deserunt in minim mollit sit.",
+      education: "B.Arch. & M. Arch. (Architectural Conservation) SPA Delhi",
+      specialization:
+        "Architectural Conservation, Heritage Restoration, Sustainable Design, Project Management",
+      achievements:
+        "Heritage Conservation Specialist, SPA Delhi Alumni, Conservation Project Leader",
+      experience: "12+ years",
+      projects: "85+ conservation and architectural projects",
+      location: "Mumbai",
+      email: "varun.bhamre@rectanglearchitects.com",
+      phone: "+91 9876543210",
+      linkedin: "https://linkedin.com/in/varunbhamre",
+    },
+    {
+      name: "Vishakha Bhamre",
+      role: "Interior Design Lead",
+      image: "dada.jpg",
+      bio: "Nisi laboris sint aute dolor nisi. Nulla consequat culpa laboris eu. Exercitation dolor esse id Lorem eiusmod sunt ullamco est duis magna in aliqua commodo. Amet ex labore labore velit deserunt cillum velit. Qui ad elit anim cupidatat occaecat labore nisi enim sint duis laborum do reprehenderit.",
+      education: "B.Interior Design, NDHM & Nashik",
+      specialization: "Interior Design, Space Planning",
+      achievements:
+        "Heritage Conservation Specialist, SPA Delhi Alumni, Conservation Project Leader",
+      experience: "7+ years",
+      projects: "85+ conservation and architectural projects",
+      location: "Mumbai",
+      email: "varun.bhamre@rectanglearchitects.com",
+      phone: "+91 9876543210",
+      linkedin: "https://linkedin.com/in/varunbhamre",
+    },
+    {
+      name: "Shekhar Kawade",
+      role: "Advisor, AI/LLM Expert, Investor",
+      image: "advisor.jpg",
+      bio: "Built AI products to democratize data and information at scale. Has worked in cutting age technology for the last 15 years. He actively invests in various categories, with a focus in AI/LLM based products",
+      education: "B.Arch. & M. Arch. (Architectural Conservation) SPA Delhi",
+      specialization:
+        "Architectural Conservation, Heritage Restoration, Sustainable Design, Project Management",
+      achievements:
+        "Heritage Conservation Specialist, SPA Delhi Alumni, Conservation Project Leader",
+      experience: "12+ years",
+      projects: "85+ conservation and architectural projects",
+      location: "Mumbai",
+      email: "varun.bhamre@rectanglearchitects.com",
+      phone: "+91 9876543210",
+      linkedin: "https://linkedin.com/in/varunbhamre",
+    },
+  ];
+
+  // Other team members (name and info only)
+  const teamMembers = [
+    // {
+    //   name: "Ar. Varun S. Bhamre",
+    //   role: "Urban Planning Specialist",
+    //   department: "Urban & Regional Planning",
+    //   experience: "10+ years",
+    //   specialization: "Urban & Regional Planning, Master Planning",
+    //   education: "B.Arch. & M. Arch. Architectural Conservation SPA Delhi",
+    //   email: "harshada.mahajan@rectanglearchitects.com",
+    // },
+    // {
+    //   name: "Ar. Bhagyashree Patil",
+    //   role: "Planning Consultant",
+    //   department: "Urban Planning",
+    //   experience: "11+ years",
+    //   specialization: "Urban & Regional Planning, Development Control",
+    //   education:
+    //     "B.Arch. (Sir J.J. CoA Mumbai), M. Plan. (Urban & Regional Planning) S.P.A. Bhopal",
+    //   email: "bhagyashree.gapat@rectanglearchitects.com",
+    // },
+    // {
+    //   name: "Vishakha Bhamre",
+    //   role: "Interior Design Lead",
+    //   department: "Interior Design",
+    //   experience: "7+ years",
+    //   specialization: "Interior Design, Space Planning",
+    //   education: "B.Interior Design, NDHM & Nashik",
+    //   email: "vishakha.patil@rectanglearchitects.com",
+    // },
+    {
+      name: "Anuja Karhu",
       role: "Urban Planning Specialist",
       department: "Urban & Regional Planning",
       experience: "10+ years",
       specialization: "Urban & Regional Planning, Master Planning",
+      location: "Pune",
       education: "B.Arch., M. Arch. (Urban & Regional Planning) Mumbai",
-      email: "harshada.mahajan@rectanglearchitects.com",
+      email: "anuja@rectanglearchitects.com",
+    },
+    {
+      name: "Er. Pawan Karale",
+      role: "MEP Consultant",
+      department: "Engineering Services",
+      firm: "Craftech Engineering",
+      experience: "8+ years",
+      specialization: "Mechanical, Electrical & Plumbing Design",
+      location: "Navi Mumbai",
+      education: "BE Mechanical Engineering",
+      email: "pawan.karale@rectanglearchitects.com",
+    },
+    {
+      name: "Nilesh Patil",
+      role: "Liaison Architect",
+      department: "Project Coordination",
+      experience: "6+ years",
+      specialization: "Project Liaison, Regulatory Approvals",
+      location: "Navi Mumbai, Badoda",
+      education: "B.E. Civil",
+      email: "harshal.joshi@rectanglearchitects.com",
     },
     {
       name: "Ar. Rohit Salunke",
@@ -66,91 +195,70 @@ const Team = () => {
       department: "Design & Development",
       experience: "8+ years",
       specialization: "Residential Design, Commercial Architecture",
+      location: "Ahilya Nagar",
       education: "B.Arch.(B.K.P.S. Pune)",
       email: "rohit.salunke@rectanglearchitects.com",
     },
     {
-      name: "Ar. Sonu Bothe-Salunke",
+      name: "Ar. Sonu Salunke",
       role: "Senior Architect",
       department: "Design",
       experience: "9+ years",
       specialization: "Landscape Architecture, Site Planning",
+      location: "Ahilya Nagar",
       education:
         "B.Arch.(Sir J.J. CoA Mumbai), M. Arch. in Landscape (Gold Medal), S.P.A. Bhopal",
       email: "sonu.bothe@rectanglearchitects.com",
     },
     {
-      name: "Ar. Bhagyashree Gapat-Patil",
-      role: "Planning Consultant",
-      department: "Urban Planning",
-      experience: "11+ years",
-      specialization: "Urban & Regional Planning, Development Control",
-      education:
-        "B.Arch. (Sir J.J. CoA Mumbai), M. Plan. (Urban & Regional Planning) S.P.A. Bhopal",
-      email: "bhagyashree.gapat@rectanglearchitects.com",
-    },
-    {
-      name: "Vishakha Patil-Bhamre",
-      role: "Interior Design Lead",
-      department: "Interior Design",
-      experience: "7+ years",
-      specialization: "Interior Design, Space Planning",
-      education: "B.Interior Design, NDHM & Nashik",
-      email: "vishakha.patil@rectanglearchitects.com",
-    },
-    {
       name: "Ar. Harshal Joshi",
       role: "Liaison Architect",
-      department: "Project Coordination",
-      experience: "6+ years",
-      specialization: "Project Liaison, Regulatory Approvals",
-      education: "B.Arch., M. Arch. (Urban & Regional Planning) Mumbai",
-      email: "harshal.joshi@rectanglearchitects.com",
-    },
-    {
-      name: "Yogesh More",
-      role: "Senior Liaison Manager",
-      department: "Project Management",
-      experience: "12+ years",
-      specialization: "Government Liaison, Project Coordination",
-      education: "Diploma in Civil Engineering",
-      email: "yogesh.more@rectanglearchitects.com",
-    },
-    {
-      name: "Er. Sachin Dalvi",
-      role: "Civil Engineer",
-      department: "Engineering",
+      department: "Liaison Architecture",
       experience: "10+ years",
-      specialization: "Structural Design, Construction Management",
+      specialization: "Urban & Regional Planning",
+      location: "Mumbai",
       education: "BE Civil, LCEE, Mumbai Univ.",
       email: "sachin.dalvi@rectanglearchitects.com",
     },
     {
-      name: "Ar. Pooja Kulkarni-Bidnur",
-      role: "Project Architect",
-      department: "Design",
-      experience: "5+ years",
-      specialization: "Residential Architecture, Design Development",
-      education: "B.Arch. Kolhapur, PG in Project Management (NICMAR) Pune",
-      email: "pooja.kulkarni@rectanglearchitects.com",
-    },
-    {
-      name: "Ar. Shrikant Borse",
+      name: "Quasco Consultancy",
       role: "Junior Architect",
       department: "Design",
       experience: "4+ years",
       specialization: "Architectural Design, 3D Modeling",
+      location: "Mumbai",
       education: "B.Arch. Loni",
       email: "shrikant.borse@rectanglearchitects.com",
     },
     {
-      name: "Er. Pawan Karale",
-      role: "MEP Consultant",
-      department: "Engineering Services",
-      experience: "8+ years",
-      specialization: "Mechanical, Electrical & Plumbing Design",
-      education: "BE Mechanical Engineering",
-      email: "pawan.karale@rectanglearchitects.com",
+      name: "Vilas Salvi",
+      role: "Junior Architect",
+      department: "Design",
+      experience: "4+ years",
+      specialization: "Architectural Design, 3D Modeling",
+      location: "Pune",
+      education: "B.Arch. Loni",
+      email: "shrikant.borse@rectanglearchitects.com",
+    },
+    {
+      name: "Shreyash Deshmukh",
+      role: "Junior Architect",
+      department: "Design",
+      experience: "4+ years",
+      specialization: "Architectural Design, 3D Modeling",
+      location: "Buldhana, Nagpur",
+      education: "B.Arch. Loni",
+      email: "shrikant.borse@rectanglearchitects.com",
+    },
+    {
+      name: "Yogesh More",
+      role: "Civil Engineer",
+      department: "Project Management",
+      experience: "12+ years",
+      specialization: "Government Liaison, Project Coordination",
+      location: "Mumbai",
+      education: "Diploma in Civil Engineering",
+      email: "yogesh.more@rectanglearchitects.com",
     },
     {
       name: "Ganesh Chopdar",
@@ -158,8 +266,28 @@ const Team = () => {
       department: "Liaison & Approvals",
       experience: "15+ years",
       specialization: "Government Approvals, Documentation",
+      location: "Kalyan / Dombivali",
       education: "Commerce Graduate",
       email: "ganesh.chopdar@rectanglearchitects.com",
+    },
+    {
+      name: "Sushil Naghate",
+      role: "Structural Enginneer",
+      department: "Structural Engineer",
+      experience: "5+ years",
+      specialization: "Residential Architecture, Design Development",
+      location: "Pune",
+      education: "B.Arch. Kolhapur, PG in Project Management (NICMAR) Pune",
+      email: "pooja.kulkarni@rectanglearchitects.com",
+    },
+    {
+      name: "DVS Consultancy",
+      role: "Structural Engineer",
+      department: "Design",
+      experience: "4+ years",
+      specialization: "Architectural Design, 3D Modeling",
+      location: "Navi Mumbai",
+      education: "B.Arch. Loni",
     },
   ];
 
